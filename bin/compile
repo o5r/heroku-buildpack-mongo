@@ -17,7 +17,7 @@ mkdir -p $heroku_dir/mongo
 warnings=$(mktemp)
 
 # Install mongodb to use mongo commands
-info "Downloading and installing mongodb..."
+echo "Downloading and installing mongodb..."
 file_name="mongodb-linux-x86_64-3.0.2.tgz"
 download_url="https://fastdl.mongodb.org/linux/${file_name}"
 curl $download_url -s -o - | tar xzf - -C /tmp
