@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+
+build_dir=$1
+heroku_dir=$build_dir/.heroku
+
+cat << EOF
+---
+config_vars:
+  PATH: $heroku_dir/mongo/bin:$PATH
+EOF
