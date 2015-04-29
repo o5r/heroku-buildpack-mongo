@@ -7,6 +7,6 @@ Usage
 
 Example usage:
 
-    $ heroku create --stack cedar --buildpack http://github.com/chmod0/heroku-buildpack-mongo.git
+    $ heroku create --stack cedar --buildpack http://github.com/Lendix/heroku-buildpack-mongo.git
 
     $ git push heroku master
