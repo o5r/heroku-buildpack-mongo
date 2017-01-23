@@ -13,4 +13,5 @@ Example usage:
     $ git push heroku master
     
 or:
+
     $ heroku buildpacks:add http://github.com/Lendix/heroku-buildpack-mongo.git
