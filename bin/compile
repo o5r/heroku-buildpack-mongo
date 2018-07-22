@@ -16,16 +16,19 @@ heroku_dir=$build_dir/.heroku
 mkdir -p $heroku_dir/mongo
 warnings=$(mktemp)
 
+mongo_version="3.4.6"
 # Install mongodb to use mongo commands
-echo "Downloading and installing mongodb..."
-file_name="mongodb-linux-x86_64-ubuntu1404-3.4.6.tgz"
+echo "-----> Downloading and installing mongodb version ${mongo_version}..."
+[[ $STACK = "heroku-16" ]] && os_id="ubuntu1604" || os_id="ubuntu1404"
+
+file_name="mongodb-linux-x86_64-${os_id}-${mongo_version}.tgz"
 download_url="https://fastdl.mongodb.org/linux/${file_name}"
 curl $download_url -s -o - | tar xzf - -C /tmp
 
 # Move mongodb binaries into the app directory
-mv /tmp/mongodb-linux-x86_64-ubuntu1404-3.4.6/* $heroku_dir/mongo
+mv "/tmp/${file_name}/*" $heroku_dir/mongo
 chmod +x $heroku_dir/mongo/bin/*
 
-echo "Creating runtime environment"
+echo "-----> Creating runtime environment"
 mkdir -p $build_dir/.profile.d
 echo "export PATH=\"\$HOME/.heroku/mongo/bin:\$PATH\"" > $build_dir/.profile.d/mongo.sh
