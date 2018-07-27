@@ -27,7 +27,7 @@ download_url="https://fastdl.mongodb.org/linux/${file_name}"
 curl $download_url -s -o - | tar xzf - -C /tmp
 
 # Move mongodb binaries into the app directory
-mv "/tmp/${folder_name}/*" $heroku_dir/mongo
+mv "/tmp/${folder_name}"/* $heroku_dir/mongo
 chmod +x $heroku_dir/mongo/bin/*
 
 echo "-----> Creating runtime environment"
