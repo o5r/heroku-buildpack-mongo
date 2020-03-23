@@ -16,10 +16,10 @@ heroku_dir=$build_dir/.heroku
 mkdir -p $heroku_dir/mongo
 warnings=$(mktemp)
 
-mongo_version="3.4.6"
+mongo_version="4.2.3"
 # Install mongodb to use mongo commands
 echo "-----> Downloading and installing mongodb version ${mongo_version}..."
-[[ $STACK = "heroku-16" ]] && os_id="ubuntu1604" || os_id="ubuntu1404"
+[[ $STACK = "heroku-16" ]] && os_id="ubuntu1604" || os_id="ubuntu1804"
 
 file_name="mongodb-linux-x86_64-${os_id}-${mongo_version}.tgz"
 folder_name=`echo "$file_name" | sed 's/\.tgz$//'`

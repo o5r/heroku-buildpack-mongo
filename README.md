@@ -2,7 +2,7 @@
 
 This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) to run mongo commands (http://www.mongodb.org/).
 
-It installs MongoDB 3.4.6 for Ubuntu 14.04 or 16.06 from https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.4.6.tgz or https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1604-3.4.6.tgz.
+It installs MongoDB 4.2.3 for Ubuntu 16.04 or 18.04 from https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1604-4.2.3.tgz or https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1804-4.2.3.tgz.
 
 Usage
 -----
